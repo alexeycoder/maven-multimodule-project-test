@@ -25,6 +25,14 @@
 		<someProperty>someValue</someProperty>
 	</properties>
 
+	<scm>
+		<connection>
+			scm:git:git@github.com:alexeycoder/maven-multimodule-project-test.git</connection>
+		<developerConnection>
+			scm:git:git@github.com:alexeycoder/maven-multimodule-project-test.git</developerConnection>
+		<url>https://github.com/alexeycoder/maven-multimodule-project-test</url>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -48,12 +56,22 @@
 	</dependencyManagement>
 
 	<build>
+
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
 		</resources>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>3.0.1</version>
+			</plugin>
+		</plugins>
+
 		<pluginManagement>
 			<!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
