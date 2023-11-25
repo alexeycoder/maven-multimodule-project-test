@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>edu.alexey</groupId>
@@ -10,6 +12,7 @@
 	<name>first-multimodule-project</name>
 
 	<modules>
+		<module>hello-plugin</module>
 		<module>database</module>
 		<module>service</module>
 		<module>web</module>
@@ -29,8 +32,8 @@
 		<developerConnection>
 			scm:git:git@github.com:alexeycoder/maven-multimodule-project-test.git</developerConnection>
 		<url>https://github.com/alexeycoder/maven-multimodule-project-test</url>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -66,14 +69,12 @@
 	</dependencyManagement>
 
 	<build>
-
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/resources</directory>
 				<filtering>true</filtering>
 			</resource>
 		</resources>
-
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -81,7 +82,6 @@
 				<version>3.0.1</version>
 			</plugin>
 		</plugins>
-
 		<pluginManagement>
 			<!-- lock down plugins versions to avoid using Maven
 			defaults (may be moved to parent pom) -->
@@ -174,4 +174,5 @@
 			</plugin>
 		</plugins>
 	</reporting>
+
 </project>
